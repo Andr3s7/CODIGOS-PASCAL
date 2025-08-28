@@ -17,7 +17,7 @@ fila := 1;
 
 while (fila <= 6) and (fila <= FILAS) do
 begin
-for col := espacios to (to espacios + estrellas -1) do
+for col := espacios to (espacios + estrellas -1) do
 if (col <= COLS) then
 matriz[fila, col] := '*';
 fila := fila +1;
@@ -42,4 +42,5 @@ begin
   writeln;
   end;
   readln;
+
   end.
