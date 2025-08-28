@@ -1,25 +1,31 @@
 program Triangulo;
 uses crt;
+
 var
-i,n, j: integer;
+  i, j, k, n: integer;
+  digito: array[0..9] of integer;
+
 begin
-clrscr;
-n:=10;
+  clrscr;
+  n := 10;  { número de filas }
+  for i := 0 to 9 do
+    digito[i] := i;
 
-for i:=1 to n do
-begin
+  for i := 1 to n do
+  begin
+    { Espacios en blanco para centrar }
+    for j := n downto i do
+      write(' ');
 
-for j :=n downto i do
-write(' ');
+    { Parte ascendente }
+    for j := i to (2*i - 1) do
+      write(digito[j mod 10]);
 
-for j:= 1 downto i do
-write(j);
+    { Parte descendente }
+    for j := (2*i - 2) downto i do
+      write(digito[j mod 10]);
 
-for j := i-1 downto 1 do
-write(j);
-
-writeln;
-end;
-
-readln;
+    writeln;
+  end;
+  readln;
 end.
